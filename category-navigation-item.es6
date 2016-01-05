@@ -64,9 +64,14 @@ export default class CategoryNavigationItem extends React.Component {
     };
     const slugClass = slug && [ 'navigation__category', slug ].filter((val) => val).join('-');
     return (
-      <div className={classnames(this.props.className, 'navigation__category', slugClass)}>
+      <div className={classnames(this.props.className, 'navigation__category', slugClass)}
+        onMouseEnter={this.getFocusToggler(slug)}
+        onMouseLeave={this.getFocusToggler(slug)}
+      >
         <h2 className={classnames('navigation__category-title', titleClasses)}>
-          <a href={categoryUrl(slug)} onClick={this.getFocusToggler(slug)}>{title}</a>
+          <a href={categoryUrl(slug)} onClick={this.getFocusToggler(slug)}>
+            {title}
+          </a>
         </h2>
         {isFocused ? <CategoryNavigationCard {...this.props} /> : ''}
       </div>
