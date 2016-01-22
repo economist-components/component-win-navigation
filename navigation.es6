@@ -23,6 +23,7 @@ class Navigation extends React.Component {
                   title: PropTypes.string.isRequired,
                   text: PropTypes.string.isRequired,
                   publishedOn: PropTypes.string,
+                  href: PropTypes.string,
                 })
               ),
             })

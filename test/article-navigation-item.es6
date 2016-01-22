@@ -32,6 +32,7 @@ describe('ArticleNavigationItem', () => {
           text={'Here is my text'}
           slug={'here-is-my-text'}
           id={10} // eslint-disable-line
+          href={'/article/10/here-is-my-text'}
         />, {});
       const out = renderer.getRenderOutput();
       out.should.deep.equal(
