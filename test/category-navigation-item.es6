@@ -39,8 +39,13 @@ describe('CategoryNavigationItem', () => {
         />, {});
       const renderOutput = renderer.getRenderOutput();
       const stubOnClick = renderOutput.props.children[0].props.children.props.onClick;
+      const stubOnMouseEnter = renderOutput.props.onMouseEnter;
+      const stubOnMouseLeave = renderOutput.props.onMouseLeave;
       renderOutput.should.deep.equal(
-        <div className="navigation__category navigation__category-here-is-my-title">
+        <div className="navigation__category navigation__category-here-is-my-title"
+          onMouseEnter={stubOnMouseEnter}
+          onMouseLeave={stubOnMouseLeave}
+        >
           <h2 className="navigation__category-title">
             <a href="?navigation=true&category=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
           </h2>
@@ -59,8 +64,13 @@ describe('CategoryNavigationItem', () => {
         />, {});
       const renderOutput = renderer.getRenderOutput();
       const stubOnClick = renderOutput.props.children[0].props.children.props.onClick;
+      const stubOnMouseEnter = renderOutput.props.onMouseEnter;
+      const stubOnMouseLeave = renderOutput.props.onMouseLeave;
       renderOutput.should.deep.equal(
-        <div className="navigation__category navigation__category-here-is-my-title">
+        <div className="navigation__category navigation__category-here-is-my-title"
+          onMouseEnter={stubOnMouseEnter}
+          onMouseLeave={stubOnMouseLeave}
+        >
           <h2 className="navigation__category-title navigation__category-title--focus">
             <a href="?navigation=true&category=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
           </h2>
@@ -84,8 +94,13 @@ describe('CategoryNavigationItem', () => {
         />, {});
       const renderOutput = renderer.getRenderOutput();
       const stubOnClick = renderOutput.props.children[0].props.children.props.onClick;
+      const stubOnMouseEnter = renderOutput.props.onMouseEnter;
+      const stubOnMouseLeave = renderOutput.props.onMouseLeave;
       renderOutput.should.deep.equal(
-        <div className="navigation__category navigation__category-here-is-my-title">
+        <div className="navigation__category navigation__category-here-is-my-title"
+          onMouseEnter={stubOnMouseEnter}
+          onMouseLeave={stubOnMouseLeave}
+        >
           <h2 className="navigation__category-title navigation__category-title--active">
             <a href="?navigation=true&category=here-is-my-title" onClick={stubOnClick}>Here is my title</a>
           </h2>

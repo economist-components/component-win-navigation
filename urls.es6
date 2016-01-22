@@ -11,12 +11,3 @@ export function categoryUrl(category) {
 export function subcategoryUrl(category, subcategory) {
   return `?navigation=true&category=${category}&subcategory=${subcategory}`;
 }
-
-export function articleUrl(id, slug) {
-  const urlParts = [
-    '/article',
-    id,
-    slug,
-  ].filter((val) => val);
-  return urlParts.join('/');
-}

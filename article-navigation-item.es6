@@ -1,7 +1,6 @@
 /* eslint id-length: 0 */
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
-import { articleUrl } from './urls';
 
 export default class ArticleNavigationItem extends React.Component {
   static get propTypes() {
@@ -9,6 +8,7 @@ export default class ArticleNavigationItem extends React.Component {
       className: PropTypes.string,
       slug: PropTypes.string.isRequired,
       id: PropTypes.number.isRequired,
+      href: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired,
       publishedOn: PropTypes.string,
@@ -28,7 +28,7 @@ export default class ArticleNavigationItem extends React.Component {
   }
 
   render() {
-    const { title, text, slug, id, activeArticleId, publishedOn } = this.props;
+    const { title, text, slug, id, href, activeArticleId, publishedOn } = this.props;
     const isActive = Boolean(id) && id === activeArticleId;
     const isNotPublished = Boolean(publishedOn);
     const containerClasses = {
@@ -57,7 +57,7 @@ export default class ArticleNavigationItem extends React.Component {
     }
 
     return (
-      <a href={articleUrl(id, slug)} onClick={this.handleClick}>
+      <a href={href} onClick={this.handleClick}>
         {body}
       </a>
     );
